@@ -28,10 +28,16 @@ public class Locators {
 //	searchbutton.click();
 		
 //	linkText
+//	
+//	WebElement seemorelink= driver.findElement(By.linkText("See more"));
+//	
+//	seemorelink.click();
 	
-	WebElement seemorelink= driver.findElement(By.linkText("See more"));
+//	partiallinktext
 	
-	seemorelink.click();
+	driver.findElement(By.partialLinkText("all offers")).click();
+	
+	
 	
 	
 	
