@@ -27,6 +27,12 @@ public class HandlingAutosuggestions {
 		{
 			String text = ele.getText();
 			
+			if(text.equals("selenium testing"))
+			{
+				ele.click();
+				break;
+				
+			}
 			System.out.println(text);
 		}
 	
