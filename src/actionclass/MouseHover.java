@@ -1,16 +1,19 @@
 package actionclass;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import utility.BaseTest;
+import utility.ScreenShots;
 
 public class MouseHover {
 	
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		WebDriver driver = BaseTest.initBrowser("https://www.amazon.in/");
 		
 		
@@ -19,6 +22,10 @@ public class MouseHover {
 	Actions act = new Actions(driver);
 	
 	act.moveToElement(hoverelement).perform();
+	
+	ScreenShots sc = new ScreenShots();
+	
+	sc.captureScreenshot(driver, "mousehoveraction");
 	
 	}
 
