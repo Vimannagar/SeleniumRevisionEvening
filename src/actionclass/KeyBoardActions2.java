@@ -15,7 +15,7 @@ public class KeyBoardActions2 {
 		
 		WebDriver driver = BaseTest.initBrowser("https://google.com");
 		
-		driver.findElement(By.xpath("//*[@name='q']")).sendKeys("India");
+		driver.findElement(By.xpath("//*[@name='q']")).sendKeys("India");// hardcoding of the data
 		
 		Thread.sleep(1000);
 		
