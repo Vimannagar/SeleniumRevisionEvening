@@ -1,13 +1,17 @@
 package navigationalmethods;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import utility.ExcelReader;
+
 public class XpathLocators {
 	
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		
 		WebDriver driver = new ChromeDriver();
 		
@@ -15,9 +19,11 @@ public class XpathLocators {
 		
 		driver.get("https://www.facebook.com/signup");
 		
-		driver.findElement(By.xpath("//input[@name='firstname']")).sendKeys("Velocity");
+		ExcelReader er = new ExcelReader();
+	
+		driver.findElement(By.xpath("//input[@name='firstname']")).sendKeys(er.readData(4, 0));
 					
-		driver.findElement(By.xpath("//input[contains(@id,'u_0_d_')]")).sendKeys("Corporate");
+		driver.findElement(By.xpath("//input[contains(@id,'u_0_d_')]")).sendKeys(er.readData(4, 1));
 	
 		String textonelement = driver.findElement(By.xpath("//div[text()='Create a new account']")).getText();
 	

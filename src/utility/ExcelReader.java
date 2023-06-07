@@ -36,6 +36,29 @@ public class ExcelReader {
 	}
 	
 	
+	public String readData(int row, int column) throws IOException
+	{
+String path = "F:\\Desktop\\VimanNagar\\May 21\\SeleniumBasicsRevision\\data\\TestData.xlsx";
+		
+		File file = new File(path);
+		
+		FileInputStream fis = new FileInputStream(file);
+		
+		XSSFWorkbook wb = new XSSFWorkbook(fis);
+		
+		XSSFSheet sh1 = wb.getSheet("Sheet1");
+		
+//		String datavalue = sh1.getRow(5).getCell(1).getStringCellValue();
+		
+		DataFormatter df = new DataFormatter();
+		
+		String datavalue = df.formatCellValue(sh1.getRow(row).getCell(column));
+		
+		System.out.println(datavalue);
+			
+	return datavalue;
+	}
+	
 	
 	
 	public static void main(String[] args) throws IOException {
