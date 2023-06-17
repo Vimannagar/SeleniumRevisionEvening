@@ -24,10 +24,41 @@ public class AssertionsInTestNG {
 			
 			boolean ispresent = actualtitle.contains(expectedtitle);
 			
-			Assert.assertEquals(ispresent, false);
+			System.out.println("Before assertion");
 			
+			Assert.assertEquals(ispresent, true);// Hard assert
 			
+			System.out.println("After assertion");
+			
+		}
+		
+		@Test
+		public void testCase2()
+		{
+			System.out.println("**************test case 2***************");
+			
+			int i = 20;
+			int j = 30;
+			boolean k = i>j;
+			
+			Assert.assertTrue(k);
 			
 			
 		}
+		@Test
+		public void testCase3()
+		{
+			System.out.println("**************test case 2***************");
+			
+			int i = 20;
+			int j = 30;
+			boolean k = i>j;
+			
+			Assert.assertFalse(k);
+			
+			
+		}
+		
+		
+		
 }
