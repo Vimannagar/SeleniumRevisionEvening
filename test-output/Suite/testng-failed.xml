@@ -1,17 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
+<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="tests" name="Chrome Test(failed)">
+    <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="testclass.ProductTest">
+      <class name="testngdiscussion.ParallelTestTagExecution">
         <methods>
-          <include name="resetFilterValidation"/>
-          <include name="tearDown"/>
-          <include name="navToProduct"/>
-          <include name="createObject"/>
-          <include name="initBrowser"/>
+          <include name="addToCart"/>
         </methods>
-      </class> <!-- testclass.ProductTest -->
+      </class> <!-- testngdiscussion.ParallelTestTagExecution -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Chrome Test(failed) -->
+  <test thread-count="5" parallel="tests" name="Firefox Test(failed)">
+    <parameter name="browser" value="Firefox"/>
+    <classes>
+      <class name="testngdiscussion.ParallelTestTagExecution">
+        <methods>
+          <include name="addToCart"/>
+        </methods>
+      </class> <!-- testngdiscussion.ParallelTestTagExecution -->
+    </classes>
+  </test> <!-- Firefox Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
